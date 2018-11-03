@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid red;
+        }
+        .addcolor{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+    </div>
+    <button id="btn1">添加颜色</button>
+    <button id="btn2">去除颜色</button>
+    <button id="btn3">随意切换</button>
+    <button id="btn4">查看是否有某类</button>
+</body>
+</html>
+<script>
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var btn3 = document.getElementById('btn3');
+    var btn4 = document.getElementById('btn4');
+    var wrapper = document.getElementById('wrapper')
+    btn1.onclick = function (ev) {
+      wrapper.classList.add('addcolor')
+    }
+    btn2.onclick = function (ev) {
+      wrapper.classList.remove('addcolor')
+    }
+    btn3.onclick = function (ev) {
+      wrapper.classList.toggle('addcolor')
+    }
+    btn4.onclick = function (ev) {
+      var res  =  wrapper.classList.contains('addcolor')
+      alert(res)
+    }
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            border: 1px solid red;
+            width: 240px;
+            text-align: center;
+            margin: 50px auto 0;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            border-bottom: 1px solid red;
+        }
+        li{
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .box{
+            width: 240px;
+            height: 130px;
+            line-height: 130px;
+            display: none;
+            user-select: none;
+        }
+        .appear{
+            display: block;
+        }
+        .nav{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li class="nav">第一页</li>
+        <li>第二页</li>
+        <li>第三页</li>
+    </ul>
+    <div class="box appear">
+        你好鸭鸭鸭！
+    </div>
+    <div class="box">
+        你猪鸭鸭鸭！
+    </div>
+    <div class="box">
+        你笨鸭鸭鸭!
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var lis = document.querySelectorAll('li');
+    var boxs = document.getElementsByClassName('box');
+    for(let i=0;i<lis.length;i++){
+      lis[i].onclick = function () {
+        for(var j=0;j<lis.length;j++){
+          lis[j].classList.remove('nav')
+          boxs[j].classList.remove('appear')
+        }
+        if(!lis[i].classList.contains('nav')){
+          lis[i].classList.add('nav')
+          boxs[i].classList.add('appear')
+        }
+      }
+    }
+</script>

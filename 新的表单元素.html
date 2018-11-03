@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单元素</title>
+    <style>
+        .firstform{
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form action="#" class="firstform">
+        邮箱：<input type="email">
+        拾色器：<input type="color">
+        地址，前边必须有http://<input type="url">
+        数字：<input type="number">
+        范围：<input type="range">
+        搜索框，目前和text一样：<input type="search">
+        tel，目前和text一样：<input type="tel">
+        date，日期：<input type="date">
+        time，时间：<input type="time">
+        datetime-local，本地日期时间：<input type="datetime-local">
+        week,周数：<input type="week">
+        month，月数：<input type="month">
+        <button>提交</button>
+    </form>
+    <div>
+        <p>新的表单元素</p>
+        <form action="">
+            <fieldset>
+                <legend>请选择一个城市</legend>
+                <input type="text" list="cities">
+                <datalist id="cities">
+                    <option value="北京">北京</option>
+                    <option value="上海">上海</option>
+                    <option value="广州">广州</option>
+                    <option value="深圳">深圳</option>
+                </datalist>
+            </fieldset>
+        </form>
+    </div>
+    <div>
+        <p>output输出</p>
+        <form action="">
+            <fieldset>
+                <legend>计算器</legend>
+                <input type="number" name="number1" id="number1" autofocus>
+                +
+                <input type="number" name="number2" id="number2"  required>
+                =
+                <output id="res"></output>
+                <input type="button" value="计算" id="jisuan">
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+</html>

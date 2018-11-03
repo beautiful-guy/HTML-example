@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 300px;
+            height: 150px;
+            margin: 100px auto 0;
+            position: relative;
+            list-style: none;
+            perspective: 800px;
+        }
+        li{
+            width: 300px;
+            height: 150px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.5s ease;
+        }
+        img{
+            width: 300px;
+            height: 150px;
+            display: block;
+        }
+        .center{
+            z-index: 998;
+            transform: translateZ(-100px);
+        }
+        .left1{
+             transform:rotateY(-30deg) translateZ(-150px);
+             z-index: 996;
+         }
+        .left2{
+            transform:rotateY(-40deg) translateZ(-200px);
+            z-index: 994;
+        }
+        .left3{
+            transform:rotateY(-50deg) translateZ(-250px);
+            z-index: 992;
+        }
+        .left4{
+            transform:rotateY(-60deg) translateZ(-300px);
+            z-index: 990;
+        }
+        .right1{
+             transform: rotateY(30deg) translateZ(-150px);
+             z-index: 996;
+         }
+        .right2{
+            transform:rotateY(40deg) translateZ(-200px);
+            z-index: 994;
+        }
+        .right3{
+            transform: rotateY(50deg) translateZ(-250px);
+            z-index: 992;
+        }
+        .right4{
+            transform:rotateY(60deg) translateZ(-300px);
+            z-index: 990;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li class="left4"><img src="./img/傻猫.png" alt=""></li>
+        <li class="left3"><img src="./img/傻猫.png" alt=""></li>
+        <li class="left2"><img src="./img/foreface.jpg" alt=""></li>
+        <li class="left1"><img src="./img/猪.jpg" alt=""></li>
+        <li class="center"><img src="./img/傻狗.png" alt=""></li>
+        <li class="right1"><img src="./img/傻猫.png" alt=""></li>
+        <li class="right2"><img src="./img/backface.jpg" alt=""></li>
+        <li class="right3"><img src="./img/傻猫.png" alt=""></li>
+        <li class="right4"><img src="./img/傻猫.png" alt=""></li>
+    </ul>
+    <button class="btn1">
+        向左
+    </button>
+    <button class="btn2">
+        向右
+    </button>
+</div>
+</body>
+</html>
+<script>
+    var btn1 = document.querySelector('.btn1')
+    var btn2 = document.querySelector('.btn2')
+    var lis = document.querySelectorAll('li')
+    var arr = ['left4','left3','left2','left1','center','right1','right2','right3','right4']
+    var isLock = false
+    btn1.onclick = function () {
+      if(!isLock){
+        setTimeout(()=>{
+          isLock = false
+        },500)
+        isLock = true
+        var first = arr.shift();
+        arr.push(first);
+        arr.forEach((item,index)=>{
+          lis[index].classList = item
+        })
+      }
+    }
+    btn2.onclick = function () {
+      if(!isLock){
+        setTimeout(()=>{
+          isLock = false
+        },500)
+        isLock = true
+        var last = arr.pop();
+        arr.unshift(last);
+        arr.forEach((item,index)=>{
+          lis[index].classList = item
+        })
+      }
+    }
+</script>

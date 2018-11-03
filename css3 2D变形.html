@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-image: url("./img/傻狗.png");
+            background-size: 100% 100%;
+            margin: 100px auto 0;
+            transition: transform 10s ease;
+        }
+        .change1{
+            transform: rotateZ(7200deg);
+        }
+        .change2{
+            transform: skewY(360deg);
+        }
+        .change3{
+            transform: scale(3);
+        }
+        .btn{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+  <div class="box">
+  </div>
+<button class="btn">
+    点我啊
+</button>
+</body>
+</html>
+<script>
+    var btn = document.querySelector('.btn')
+    var box = document.querySelector('.box')
+    btn.onclick = function () {
+      box.classList.add('change3')
+    }
+</script>

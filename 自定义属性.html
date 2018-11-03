@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button data-name="小猪" data-you-are="你是个" id="btn1">点我啊</button>
+</body>
+</html>
+<script>
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function (ev) {
+      alert(btn1.dataset.youAre + btn1.dataset.name);
+    }
+</script>
+
+//定义时用data-属性名 = '属性值'，例如 data-name="小猪"
+//访问时用element.dataset.name

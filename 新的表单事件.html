@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+          var username = document.getElementById('username');
+          var email = document.getElementById('email')
+          username.oninput = function () {
+            console.log('你是猪')
+          }
+          username.onchange = function () {
+            alert('啦啦啦')
+          }
+          email.oninvalid = function (ev) {
+            alert('我触发了')
+          }
+        }
+    </script>
+</head>
+<body>
+<form action="">
+    <fieldset>
+        <legend>新的表单事件</legend>
+        <p>oninput和onchange的不同在于oninput中只要内容发生变化就触发，而onchange只有当内容改变且失去焦点的时候才会触发</p>
+        <input type="text" id="username">
+        <input type="email" id="email">
+    </fieldset>
+    <button>提交</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            left: 100px;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            transition: top 3s ease,left 3s ease,opacity 3s ease;
+        }
+        #btn{
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+</div>
+<button id="btn">
+    动起来
+</button>
+</body>
+</html>
+<script>
+    var btn = document.querySelector('#btn');
+    var box = document.querySelector('#box');
+    btn.onclick = function () {
+      box.style.top = 400+'px'
+      box.style.left = 400 + 'px'
+      box.style.opacity = 0
+    }
+</script>
